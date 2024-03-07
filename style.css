@@ -3,6 +3,9 @@
   --cubitz-color-2: #1D3758;
   --cubitz-color-3: #AD1200;
 }
+html {
+  scroll-behavior: smooth; /* Añade esta línea */
+}
 body{
   background-color: white;
   color: black;
@@ -10,45 +13,49 @@ body{
   width: 100%;
   margin-inline: auto;
 }
+
 header{
   top: 0;
   display: flex;
-  position: fixed;
   justify-content: center;
+  align-items: center;
   width: 100%;
+  position: fixed;
 }
-header>section{
+header>nav{
   display: flex;
   align-items: center;
-  gap: 600px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
   border-radius: 10px;
   background-color: rgb(255, 255, 255, 0.7);
   padding: 4px;
   backdrop-filter: blur(5px);
 }
-header>section>nav{
-  display: flex;
-  align-items: center;
+.logo{
+  padding: 10px;
 }
-header>section>nav>a{
+.links{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 6px;
 }
-header>section>nav>a:hover{
-  z-index: 1;
+.links>a{
+  padding: 10px 6px;
+  padding-inline: 10px;
+}
+.links>a:hover{
   outline: 2px solid var(--cubitz-color-2);
   border-radius: 5px;
 }
 
 .content{
-  padding-top: 50px;
+  padding-top: 60px;
   max-width: 800px;
   margin-inline: auto;
 }
 .description>h1{
-  max-width: 300px;
   text-wrap: wrap;
   margin-top: 40px;
   margin-bottom: 20px;
@@ -56,8 +63,7 @@ header>section>nav>a:hover{
 }
 .description>p{
   color: rgb(0,0,0,0.8);
-  max-width: 300px;
-  text-wrap: wrap;
+  text-wrap: balance;
   margin-top: 0;
   margin-bottom: 40px;
 }
