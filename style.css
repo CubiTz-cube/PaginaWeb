@@ -47,10 +47,6 @@ header>section>nav>a:hover{
   max-width: 800px;
   margin-inline: auto;
 }
-
-.description{
-
-}
 .description>h1{
   max-width: 300px;
   text-wrap: wrap;
