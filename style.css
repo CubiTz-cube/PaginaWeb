@@ -6,12 +6,6 @@
 html {
   scroll-behavior: smooth;
 }
-@media (max-width: 600px) {
-  .links>a>svg{
-    width: 70px;
-    height: 70px;
-  }
-}
 body{
   background-color: white;
   color: black;
@@ -21,6 +15,7 @@ body{
 }
 
 header{
+  z-index: 1;
   top: 0;
   display: flex;
   justify-content: center;
@@ -34,10 +29,8 @@ header>nav{
   justify-content: space-between;
   width: 100%;
   max-width: 900px;
-  border-radius: 10px;
   background-color: rgb(255, 255, 255, 0.7);
   padding: 4px;
-  padding-top: 16px;
   backdrop-filter: blur(5px);
 }
 .logo{
@@ -61,17 +54,11 @@ header>nav{
   border-radius: 5px;
 }
 
+
 .content{
-  padding-top: 100px;
+  padding-top: 80px;
   max-width: 800px;
   margin-inline: auto;
-}
-p{
-  color: rgb(0,0,0,1);
-  font-size: 1em;
-  text-wrap: balance;
-  margin-top: 0;
-  margin-bottom: 40px;
 }
 h1{
   display: flex;
@@ -89,40 +76,81 @@ h1>svg{
   height: 30px;
 }
 
+
 .description{
   margin-bottom: 60px;
 }
 .description>h1{
   color: var(--cubitz-color-1);
 }
+.description>p{
+  color: rgb(0,0,0,1);
+  font-size: 1em;
+  text-wrap: balance;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
 
 .proyectos>h1{
   color: var(--cubitz-color-2);
   margin-bottom: 30px;
 }
-.proyectos>.Container{
+.Container{
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.proyectos>.Container>.Card{
+.Card{
   display: flex;
   gap: 20px;
+  height: 250px;
 }
-.proyectos>.Container>.Card>.ImageContainer{
-  flex: 1.5;
-}
-.proyectos>.Container>.Card>.ImageContainer>div{
+.ImageContainer>div{
   display: flex;
   flex-direction: column;
   align-content: flex-start;
-}
-.proyectos>.Container>.Card>.ImageContainer>div>img{
-  max-width: 100%;
-  object-fit: cover;
+  height: 100%;
   border-radius: 10px;
 }
-.proyectos>.Container>.Card>.TextContainer{
+@media (max-width: 600px) {
+  .Card{
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  .content{
+    padding-inline: 30px;
+  }
+}
+.Image{
+  height: 100%; 
+  object-fit: contain;
+  border-radius: 10px;
+  
+  transition-duration: 0.5s;
+}
+.Image:hover{
+  scale: 1.1;
+}
+.TextContainer{
   flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+.TextContainer>h2{
+  margin-top: 0;
+}
+.TextContainer>p{
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
