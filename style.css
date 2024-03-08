@@ -38,6 +38,9 @@ header>nav{
   padding: 3px;
   backdrop-filter: blur(5px);
 }
+.logo:focus {
+  outline: none;
+}
 .logo>picture>img{
   max-width: 200px;
   width: 100%;
