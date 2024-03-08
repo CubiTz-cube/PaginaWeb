@@ -239,7 +239,3 @@ footer>li{
 .end>a:hover{
   color: var(--cubitz-color-3);
 }
-a:focus {
-
-  outline: 2px solid var(--cubitz-color-1);
-}
