@@ -1,15 +1,16 @@
 :root {
-  --cubitz-color-1: #8CAC00;
-  --cubitz-color-2: #1D3758;
-  --cubitz-color-3: #AD1200;
+  --cubitz-color-1: #1482f7;
+  --cubitz-color-2: #BED907;
+  --cubitz-color-3: #ea3225;
+  --fondo: rgb(4, 4, 15);
 }
 html {
   scroll-behavior: smooth;
   transition: width 0.5s;
 }
 body{
-  background-color: white;
-  color: black;
+  background-color: var(--fondo);
+  color: white;
   font-family: Onest Variable,system-ui,sans-serif;
   width: 100%;
   margin-inline: auto;
@@ -34,8 +35,8 @@ header>nav{
   height: 100%;
   max-height: 150px;
 
-  background-color: rgb(255, 255, 255, 0.7);
   padding: 3px;
+  background-color: rgb(4, 4, 15 , 0.7);
   backdrop-filter: blur(5px);
 }
 .logo:focus {
@@ -120,8 +121,8 @@ h1>svg{
   text-wrap: wrap;
 }
 .description>p{
-  color: rgb(0,0,0,1);
-  font-size: 1em;
+  opacity: 0.9;
+  font-size: 1.1em;
   text-wrap: balance;
   margin-top: 0;
   margin-bottom: 40px;
@@ -207,6 +208,8 @@ h1>svg{
 .TextContainer>p{
   margin-top: 0;
   margin-bottom: 10px;
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 
 
@@ -217,22 +220,48 @@ h1>svg{
 .team>h1{
   color: var(--cubitz-color-3);
 }
-.team>li{
+.team li{
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  font-size: 1.5rem;
+  opacity: 0.9;
+  gap: 25px;
 }
-
-
+.team li p {
+  &::after {
+    content: " ";
+    display: block;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background-color: var(--cubitz-color-3);
+    position: relative;
+    left: -1.2rem;
+    bottom: 1.2rem;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+  }
+  &:hover::after {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 footer{
   margin-top: 100px;
   margin-bottom: 60px;
-  opacity: 0.8;
+  opacity: 0.9;
+  font-size: 1.1rem;
+  height: 100%;
 }
-footer>li{
+footer li{
   display: flex;
   justify-content: space-evenly;
   font-weight: 700;
   font-size: small;
+  opacity: 0.9;
 }
 .end>a{
   color: inherit;
